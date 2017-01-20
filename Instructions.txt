@@ -1,0 +1,81 @@
+﻿Matrix Expression Evaluator (Due 2/3)
+
+Using C#, create a Matrix class that contains all standard properties and includes methods to:
+
+
+- "matrix multiply" using the * operator
+- "matrix add" using the + operator
+--- methods should include exception handling when matrix dimensions do not allow operation
+- create the following matrices by definition
+--- Translate by X, Y, and/or Z (e.g. "T(5, 0, 2)" )
+--- Uniform Scale (e.g. "S(0.25)" )
+--- Rotate around X (e.g. "RX(0.02)" will rotate by 0.02 radians)
+--- Rotate around Y (e.g. "RY(-0.02)" )
+--- Rotate around Z (e.g. "RZ(0.5)" )
+- print 
+
+Using the C# XMLReader to allow the input of a Matrix:
+When the program is executed, it should ask the user to type the location(full path) of an XML file containing a matrix.
+- You may also pass this as a command-line argument if you prefer
+Then it should ask the user to enter an expression. (e.g. "T(10, 0, 0) * RY(1.56) * M" where M is the loaded matrix) and a resulting matrix should be printed.
+- allow arguments to handle +/- integers and floating point
+Loop this until the user types "q"
+
+
+Expected Output
+
+Input:
+c:/vector.xml ( which contains [1,2,3])
+T(0,1,2)*RX(0.1)*M
+
+1.00000
+2.690508
+5.184679
+1.00000
+
+Input:
+c:/vector.xml 
+RX(1.56)*RZ(1.56)*M
+
+-1.989087
+-2.98879
+1.053863
+1.00000
+
+Input:
+c:/vector.xml  
+T(10,11,12)*M  
+
+Resulting matrix is:
+11.00000
+13.00000
+15.00000
+1.00000
+
+Input:
+c:/matrix.xml  ( which contains 4x4 identity)
+T(1,2,3)*RX(0.1)*M
+
+Resulting matrix is: 
+1.00000       0.00000       0.00000           1.00000
+0.00000          0.9950042       -0.09983341     2.00000
+0.00000          0.09983341      0.9950042       3.00000
+0.00000          0.00000           0.00000           1.00000
+
+Input:
+c:/matrix.xml 
+RX(0.1)*T(1,2,3)*M
+
+1.00000      0.00000          0.00000          1.00000
+0.00000         0.9950042       -0.09983342     1.690508
+0.00000         0.09983342      0.9950042       3.184679
+0.00000         0.00000         0.00000          1.00000
+
+Input:
+c:/matrix.xml 
+RZ(1.56)*RX(0.1)*T(1,2,3)*RX(1.56)*M
+
+0.01080   0.08908   0.99597  -1.67961
+0.99994  -0.00096  -0.01075   1.01819
+0.00000   0.99602  -0.08909   3.18468
+0.00000   0.00000   0.00000   1.00000
