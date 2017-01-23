@@ -16,16 +16,17 @@ namespace CSC316_Assignment1
             //Matrix C = A + B;
             //Console.WriteLine(C.ToString());
 
-            //XmlSerializer matrixSerializer = new XmlSerializer(typeof(Matrix));
-            //TextWriter matrixWriter = new StreamWriter("matrix.xml");
-            //matrixSerializer.Serialize(matrixWriter, C);
-            //matrixWriter.Close();
-
             Console.Write("Enter xml file: ");
             var matrixPath = Console.ReadLine();
 
             Matrix inputMatrix;
             XmlSerializer matrixSerializer = new XmlSerializer(typeof(Matrix));
+
+            //Matrix C = new Matrix();
+            //TextWriter matrixWriter = new StreamWriter("matrix.xml");
+            //matrixSerializer.Serialize(matrixWriter, C);
+            //matrixWriter.Close();
+
             try
             {
                 TextReader matrixReader = new StreamReader(matrixPath);
@@ -35,14 +36,14 @@ namespace CSC316_Assignment1
             catch(Exception e)
             {
                 Console.WriteLine("Could not read " + matrixPath);
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
                 return;
             }
 
             while (true)
             {
                 var expressionInput = "";
-                Console.WriteLine("Enter expression (q to quit): ");
+                Console.Write("Enter expression (q to quit): ");
                 expressionInput = Console.ReadLine();
 
                 if (expressionInput == "q" || expressionInput == "quit")
