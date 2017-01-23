@@ -39,8 +39,15 @@ namespace CSC316_Assignment1
                 return;
             }
 
-            Console.WriteLine("Enter expression: ");
-            var expressionInput = Console.ReadLine();
+            while (true)
+            {
+                var expressionInput = "";
+                Console.WriteLine("Enter expression (q to quit): ");
+                expressionInput = Console.ReadLine();
+
+                if (expressionInput == "q" || expressionInput == "quit")
+                    break;
+            }
         }
     }
 }
