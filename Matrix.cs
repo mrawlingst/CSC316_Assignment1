@@ -104,7 +104,15 @@ namespace CSC316_Assignment1
 
         public Matrix Scale(float s)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    data[i][j] *= s;
+                }
+            }
+
+            return this;
         }
 
         public Matrix Rotate(float x, float y, float z)
