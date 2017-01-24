@@ -48,6 +48,12 @@ namespace CSC316_Assignment1
 
                 if (expressionInput == "q" || expressionInput == "quit")
                     break;
+
+                if (expressionInput == "w")
+                    Console.WriteLine(inputMatrix.ToString());
+
+                if (expressionInput == "add")
+                    Console.WriteLine(inputMatrix.Translate(10, 11, 12).ToString());
             }
         }
     }

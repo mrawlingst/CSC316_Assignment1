@@ -45,9 +45,9 @@ namespace CSC316_Assignment1
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (i == j)
-                        data[i][j] = 1.0f;
-                    else
+                    //if (i == j)
+                    //    data[i][j] = 1.0f;
+                    //else
                         data[i][j] = 0.0f;
                 }
             }
@@ -99,7 +99,29 @@ namespace CSC316_Assignment1
 
         public Matrix Translate(float x, float y, float z)
         {
-            throw new NotImplementedException();
+            Matrix translateMatrix = new Matrix(rows, cols);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    if (i == 0)
+                    {
+                        translateMatrix.Data[i][j] = x;
+                    }
+
+                    if (i == 1)
+                    {
+                        translateMatrix.Data[i][j] = y;
+                    }
+
+                    if (i == 2)
+                    {
+                        translateMatrix.Data[i][j] = z;
+                    }
+                }
+            }
+
+            return this + translateMatrix;
         }
 
         public Matrix Scale(float s)
