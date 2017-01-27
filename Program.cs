@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace CSC316_Assignment1
@@ -8,14 +9,6 @@ namespace CSC316_Assignment1
     {
         static void Main(string[] args)
         {
-            //Matrix A = new Matrix();
-            //Matrix B = new Matrix();
-            //Console.WriteLine(A.ToString());
-            //Console.WriteLine(B.ToString());
-
-            //Matrix C = A + B;
-            //Console.WriteLine(C.ToString());
-
             Console.Write("Enter xml file: ");
             var matrixPath = Console.ReadLine();
 
@@ -36,7 +29,6 @@ namespace CSC316_Assignment1
             catch(Exception e)
             {
                 Console.WriteLine("Could not read " + matrixPath);
-                //Console.WriteLine(e);
                 return;
             }
 
@@ -46,14 +38,8 @@ namespace CSC316_Assignment1
                 Console.Write("Enter expression (q to quit): ");
                 expressionInput = Console.ReadLine();
 
-                if (expressionInput == "q" || expressionInput == "quit")
+                if (Regex.Matches(expressionInput, @"q(uit)?$").Count > 0)
                     break;
-
-                if (expressionInput == "w")
-                    Console.WriteLine(inputMatrix.ToString());
-
-                if (expressionInput == "add")
-                    Console.WriteLine(inputMatrix.Translate(10, 11, 12).ToString());
             }
         }
     }
