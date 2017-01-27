@@ -164,7 +164,14 @@ namespace CSC316_Assignment1
 
         public static Matrix RotateZ(double radian)
         {
-            throw new NotImplementedException();
+            Matrix rotateMatrix = new Matrix();
+
+            rotateMatrix.Data[0][0] = (float)Math.Cos(radian);
+            rotateMatrix.Data[0][1] = -(float)Math.Sin(radian);
+            rotateMatrix.Data[1][0] = (float)Math.Sin(radian);
+            rotateMatrix.Data[1][1] = (float)Math.Cos(radian);
+
+            return rotateMatrix;
         }
     }
 }
