@@ -152,7 +152,14 @@ namespace CSC316_Assignment1
 
         public static Matrix RotateY(double radian)
         {
-            throw new NotImplementedException();
+            Matrix rotateMatrix = new Matrix();
+
+            rotateMatrix.Data[0][0] = (float)Math.Cos(radian);
+            rotateMatrix.Data[0][2] = (float)Math.Sin(radian);
+            rotateMatrix.Data[2][0] = -(float)Math.Sin(radian);
+            rotateMatrix.Data[2][2] = (float)Math.Cos(radian);
+
+            return rotateMatrix;
         }
 
         public static Matrix RotateZ(double radian)
