@@ -138,7 +138,24 @@ namespace CSC316_Assignment1
             return scaleMatrix;
         }
 
-        public Matrix Rotate(float x, float y, float z)
+        public static Matrix RotateX(double radian)
+        {
+            Matrix rotateMatrix = new Matrix();
+
+            rotateMatrix.Data[1][1] = (float)Math.Cos(radian);
+            rotateMatrix.Data[1][2] = -(float)Math.Sin(radian);
+            rotateMatrix.Data[2][1] = (float)Math.Sin(radian);
+            rotateMatrix.Data[2][2] = (float)Math.Cos(radian);
+
+            return rotateMatrix;
+        }
+
+        public static Matrix RotateY(double radian)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static Matrix RotateZ(double radian)
         {
             throw new NotImplementedException();
         }
