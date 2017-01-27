@@ -13,6 +13,7 @@ Using C#, create a Matrix class that contains all standard properties and includ
 --- Rotate around Y (e.g. "RY(-0.02)" )
 --- Rotate around Z (e.g. "RZ(0.5)" )
 - print 
+- (assume 4x4 matrix or 4x1 vector)
 
 Using the C# XMLReader to allow the input of a Matrix:
 When the program is executed, it should ask the user to type the location(full path) of an XML file containing a matrix.
