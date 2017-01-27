@@ -78,7 +78,25 @@ namespace CSC316_Assignment1
 
         public static Matrix operator*(Matrix A, Matrix B)
         {
-            throw new NotImplementedException();
+            if (A.cols != B.rows)
+            {
+                throw new ArgumentException("Invalid matrix dimensions: Matrix A's # of cols must match Matrix B's # of rows");
+            }
+
+            Matrix C = new Matrix(A.rows, B.cols);
+
+            for (int i = 0; i < A.rows; i++)
+            {
+                for (int j = 0; j < B.cols; j++)
+                {
+                    for (int k = 0; k < A.cols; k++)
+                    {
+                        C.Data[i][j] += A.Data[i][k] * B.data[k][j];
+                    }
+                }
+            }
+
+            return C;
         }
 
         public override string ToString()
