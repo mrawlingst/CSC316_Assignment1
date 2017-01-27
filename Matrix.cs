@@ -124,21 +124,18 @@ namespace CSC316_Assignment1
             translateMatrix.Data[0][3] = x;
             translateMatrix.Data[1][3] = y;
             translateMatrix.Data[2][3] = z;
-            Console.WriteLine(translateMatrix.ToString());
             return translateMatrix;
         }
 
-        public Matrix Scale(float s)
+        public static Matrix Scale(float s)
         {
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    data[i][j] *= s;
-                }
-            }
+            Matrix scaleMatrix = new Matrix();
 
-            return this;
+            scaleMatrix.Data[0][0] = s;
+            scaleMatrix.Data[1][1] = s;
+            scaleMatrix.Data[2][2] = s;
+
+            return scaleMatrix;
         }
 
         public Matrix Rotate(float x, float y, float z)
